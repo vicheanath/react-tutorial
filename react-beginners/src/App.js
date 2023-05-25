@@ -36,7 +36,7 @@ const App = () => {
             <input type="text" value={content.name} />
             <label>Job</label>
             <input type="text" value={content.job} />
-            <div>
+            <div className="popup_action">
               <button onClick={() => setOpen(false)}>Close</button>
               <button onClick={() => setOpen(false)}>{content.action}</button>
             </div>
