@@ -8,10 +8,10 @@ To get started with the React tutorial, follow these steps:
 
 1. Clone this repository to your local machine using the following command:
 
-  ```git clone https://github.com/your-username/react-tutorial.git```
+  `git clone https://github.com/your-username/react-tutorial.git`
   
 2. Navigate to the cloned directory:
-  ```cd react-tutorial```
+  `cd react-tutorial`
 
 3. Install the necessary dependencies using your preferred package manager. For example, with npm:
    ```npm install```
