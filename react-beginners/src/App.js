@@ -1,6 +1,7 @@
 import React from "react";
 import { createPortal } from "react-dom";
 import "./App.css";
+import Button from "./components/Button";
 
 const App = () => {
   const data = [
@@ -26,6 +27,13 @@ const App = () => {
 
   const [open, setOpen] = React.useState(false);
   const [content, setContent] = React.useState("");
+
+  const handleClick = async () => {
+    // Simulating an API request delay with a setTimeout
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    console.log('Button clicked!');
+  };
+
   return (
     <div>
       <h1>React App Tutorial</h1>
@@ -37,8 +45,8 @@ const App = () => {
             <label>Job</label>
             <input type="text" value={content.job} />
             <div className="popup_action">
-              <button onClick={() => setOpen(false)}>Close</button>
-              <button onClick={() => setOpen(false)}>{content.action}</button>
+              <Button onClick={() => setOpen(false)}>Close</Button>
+              <Button onClick={() => setOpen(false)}>{content.action}</Button>
             </div>
           </form>
         }
@@ -58,14 +66,11 @@ const App = () => {
                 <td>{item.name}</td>
                 <td>{item.job}</td>
                 <td>
-                  <button
-                    onClick={() => {
-                      setOpen(true);
-                      setContent(item);
-                    }}
+                  <Button
+                    onClick={handleClick}
                   >
                     {item.action}
-                  </button>
+                  </Button>
                 </td>
               </tr>
             );
@@ -78,7 +83,7 @@ const App = () => {
 
 export default App;
 
-// Create modal potral
+// Create modal portal
 
 const Popup = ({ children, onClose, isOpen,title }) => {
   const el = document.createElement("div");
